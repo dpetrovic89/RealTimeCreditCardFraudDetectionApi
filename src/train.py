@@ -28,7 +28,7 @@ def train_model():
     # 2. Load and Prepare Data
     print("Loading data...")
     df = pd.read_csv('data/creditcard.csv')
-    X = df.drop(['Class', 'Time'], axis=1) # Drop Time as it might be a leak or irrelevant without more context
+    X = df.drop(['Class'], axis=1) 
     y = df['Class']
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)

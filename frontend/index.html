@@ -314,9 +314,9 @@
             btn.disabled = true;
 
             try {
-                // In a real scenario, this matches the FastAPI endpoint
-                // For this demo, we'll simulate the call or try to call localhost:8001
-                const response = await fetch('http://localhost:8001/predict', {
+                // Use relative path for Vercel/Production, fallback to local for dev
+                const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:8001/predict' : '/api/predict';
+                const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ features })

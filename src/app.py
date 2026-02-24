@@ -22,8 +22,8 @@ def load_model():
         print("Model file not found. Make sure to run training first.")
 
 class Transaction(BaseModel):
-    # Expecting 28 PCA features (V1-V28) and Amount
-    features: List[float] # V1...V28, Amount (29 features)
+    # Expecting: Time, 28 PCA features (V1-V28) and Amount
+    features: List[float] # Time, V1...V28, Amount (30 features)
 
 @app.get("/")
 def read_root():
@@ -34,8 +34,8 @@ def predict(transaction: Transaction):
     if model is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
     
-    if len(transaction.features) != 29:
-        raise HTTPException(status_code=400, detail="Expected 29 numerical features (V1-V28, Amount)")
+    if len(transaction.features) != 30:
+        raise HTTPException(status_code=400, detail="Expected 30 numerical features (Time, V1-V28, Amount)")
     
     # Preprocess and predict
     features_array = np.array(transaction.features).reshape(1, -1)
