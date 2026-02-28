@@ -11,6 +11,8 @@ pinned: false
 
 ## Website: https://huggingface.co/spaces/executor1389/RealTimeCreditCardFraudDetectionApi
 
+![FraudShield AI Screenshot](assets/screenshot.png)
+
 [![Fraud Detection CI/CD](https://github.com/dpetrovic89/RealTimeCreditCardFraudDetectionApi/actions/workflows/main.yml/badge.svg)](https://github.com/dpetrovic89/RealTimeCreditCardFraudDetectionApi/actions)
 
 FraudShield AI is a production-ready MLOps ecosystem designed to detect fraudulent credit card transactions in real-time. Built with a 100% free-tier stack, this project demonstrates senior-level engineering across the entire data-to-deployment lifecycle.
