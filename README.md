@@ -15,14 +15,21 @@ FraudShield AI is a production-ready MLOps ecosystem designed to detect fraudule
 
 ## 🏗️ Architecture Stack
 
+FraudShield AI implements a layered architecture from data ingestion to real-time serving. See the [**System Architecture Guide**](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/architecture.md) for full details and diagrams.
+
 - **Model**: LightGBM (89% Recall on real Kaggle data)
-- **Serving**: FastAPI + Uvicorn
-- **Frontend**: Premium Glassmorphic UI (Vanilla JS/CSS)
-- **Data Foundation**: DVC (Data Version Control) + Great Expectations (Validation)
-- **MLOps**: MLflow + DagsHub (Experiment Tracking)
-- **Infrastructure**: Docker + Kubernetes (Minikube)
-- **CI/CD**: GitHub Actions
-- **Monitoring**: Evidently AI (Drift Detection) + Prometheus (Metrics)
+- **Serving**: FastAPI + Docker (serving on port 7860/8000)
+- **Frontend**: Premium Glassmorphic UI 
+- **Monitoring**: Evidently AI + Prometheus
+- **CI/CD**: GitHub Actions (Auto-Sync to Hugging Face)
+
+---
+
+## 📊 Data Privacy & Source
+
+- **Real Data**: The project is designed for the [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) dataset. Due to its 150MB size, it is git-ignored and stored locally in `data/creditcard.csv`.
+- **Mock Data**: For CI/CD and testing on the cloud, a `scripts/generate_data.py` utility creates a synthetic dataset that mimics the real distribution without exposing sensitive information.
+- **Model Storage**: The "wisdom" of the real data is compressed into the 7KB [src/model.txt](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/src/model.txt) used by the API.
 
 ---
 
