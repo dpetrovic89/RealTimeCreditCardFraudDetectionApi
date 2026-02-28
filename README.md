@@ -7,7 +7,7 @@ sdk: docker
 pinned: false
 ---
 
-# FraudShield AI: Real-Time Credit Card Fraud Detection 🚀
+# FraudShield AI: Real-Time Credit Card Fraud Detection
 
 ## Website: https://huggingface.co/spaces/executor1389/RealTimeCreditCardFraudDetectionApi
 
