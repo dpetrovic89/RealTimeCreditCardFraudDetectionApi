@@ -14,6 +14,7 @@ COPY . .
 
 # Ensure model is available or provide a placeholder
 # In production, we'd download from MLflow registry
-EXPOSE 8000
+# Hugging Face default port is 7860
+EXPOSE 7860
 
-CMD ["uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "7860"]

@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import lightgbm as lgb
 import numpy as np
@@ -7,6 +9,9 @@ import os
 from typing import List
 
 app = FastAPI(title="Credit Card Fraud Detection API")
+
+# Serve frontend static files
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
 
 # Model path
 MODEL_PATH = "src/model.txt"
@@ -27,7 +32,7 @@ class Transaction(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"message": "Fraud Detection API is running"}
+    return FileResponse('frontend/index.html')
 
 @app.post("/predict")
 def predict(transaction: Transaction):

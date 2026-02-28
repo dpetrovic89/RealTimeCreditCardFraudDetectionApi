@@ -6,5 +6,6 @@ numpy
 scikit-learn
 mlflow
 dagshub
-
-
+great_expectations
+evidently
+prometheus_client

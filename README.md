@@ -1,3 +1,12 @@
+---
+title: FraudShield AI
+emoji: 🛡️
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
 # FraudShield AI: Real-Time Credit Card Fraud Detection 🚀
 
 [![Fraud Detection CI/CD](https://github.com/dpetrovic89/RealTimeCreditCardFraudDetectionApi/actions/workflows/main.yml/badge.svg)](https://github.com/dpetrovic89/RealTimeCreditCardFraudDetectionApi/actions)
@@ -66,13 +75,19 @@ kubectl apply -f k8s/deployment.yaml
 minikube service fraud-detection-service
 ```
 
-### 6. Deploy to Vercel (Fastest & Free)
+### 6. Deploy to Hugging Face Spaces (ML Optimized & Free)
+1. Create a "New Space" on [Hugging Face](https://huggingface.co/spaces).
+2. Select **Docker** as the SDK.
+3. Push your GitHub repository (or upload files).
+4. Hugging Face will build the `Dockerfile` and host your app on port 7860!
+
+### 7. Deploy to Vercel (Fastest & Free)
 This app is optimized for Vercel Serverless Functions.
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run `vercel` in the root directory.
-3. Your frontend will be at `https://your-project.vercel.app` and API at `/api/predict`.
+3. Your frontend will be at `https://your-project.vercel.app`.
 
-### 7. Activate CI/CD
+### 8. Activate CI/CD
 To enable automated builds and tests:
 1. Go to your GitHub Repo > **Settings** > **Secrets and variables** > **Actions**.
 2. Add the following secrets:

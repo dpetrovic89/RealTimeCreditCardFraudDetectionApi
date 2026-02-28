@@ -314,8 +314,8 @@
             btn.disabled = true;
 
             try {
-                // Use relative path for Vercel/Production, fallback to local for dev
-                const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:8001/predict' : '/api/predict';
+                // Use relative path for Production (HF/Vercel), fallback to local for dev
+                const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:8001/predict' : '/predict';
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
