@@ -15,6 +15,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libgomp1
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -23,10 +27,15 @@ jobs:
       run: |
         mkdir -p data
         python scripts/generate_data.py
+    - name: List Files
+      run: ls -R
     - name: Run Data Validation
-      run: python scripts/data_validation.py
+      run: |
+        export PYTHONPATH=$PYTHONPATH:.
+        python scripts/data_validation.py
     - name: Smoke Test (API)
       run: |
+        export PYTHONPATH=$PYTHONPATH:.
         python -c "from src.app import app; print('App loaded successfully')"
 
   deploy-to-huggingface:
