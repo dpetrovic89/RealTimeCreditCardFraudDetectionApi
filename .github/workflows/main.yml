@@ -41,3 +41,17 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/fraud-detection-api:latest
+
+  deploy-to-huggingface:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Push to Hugging Face
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      run: |
+        git push --force https://dpetrovic89:$HF_TOKEN@huggingface.co/spaces/dpetrovic89/RealTimeCreditCardFraudDetectionApi main
