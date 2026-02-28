@@ -39,8 +39,8 @@ graph TD
 *   **Tracking**: Every training run is logged to **DagsHub (MLflow)**, tracking hyperparameters, metrics (F1-score, Recall), and the final model file.
 
 ### 3. Serving & Infrastructure
-*   **API**: A FastAPI application ([src/app.py](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/src/app.py)) provides a `/predict` endpoint.
-*   **Frontend**: A responsive, glassmorphic UI ([frontend/index.html](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/frontend/index.html)) communicates with the API.
+*   **API**: A FastAPI application ([src/app.py](src/app.py)) provides a `/predict` endpoint.
+*   **Frontend**: A responsive, glassmorphic UI ([frontend/index.html](frontend/index.html)) communicates with the API.
 *   **Containerization**: The entire app is wrapped in a **Docker** image for easy deployment.
 
 ### 4. CI/CD Pipeline
@@ -55,4 +55,4 @@ graph TD
 *   **Metrics**: Prometheus scrapes transaction volume and latency from the API.
 
 ---
-*Return to [README.md](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/README.md)*
+*Return to [README.md](README.md)*

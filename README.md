@@ -15,7 +15,7 @@ FraudShield AI is a production-ready MLOps ecosystem designed to detect fraudule
 
 ## 🏗️ Architecture Stack
 
-FraudShield AI implements a layered architecture from data ingestion to real-time serving. See the [**System Architecture Guide**](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/architecture.md) for full details and diagrams.
+FraudShield AI implements a layered architecture from data ingestion to real-time serving. See the [**System Architecture Guide**](architecture.md) for full details and diagrams.
 
 - **Model**: LightGBM (89% Recall on real Kaggle data)
 - **Serving**: FastAPI + Docker (serving on port 7860/8000)
@@ -29,7 +29,7 @@ FraudShield AI implements a layered architecture from data ingestion to real-tim
 
 - **Real Data**: The project is designed for the [Kaggle Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) dataset. Due to its 150MB size, it is git-ignored and stored locally in `data/creditcard.csv`.
 - **Mock Data**: For CI/CD and testing on the cloud, a `scripts/generate_data.py` utility creates a synthetic dataset that mimics the real distribution without exposing sensitive information.
-- **Model Storage**: The "wisdom" of the real data is compressed into the 7KB [src/model.txt](file:///e:/Programming/Antigravity Agent Manager folder/RealTimeCreditCardFraudDetectionApi/src/model.txt) used by the API.
+- **Model Storage**: The "wisdom" of the real data is compressed into the 7KB [src/model.txt](src/model.txt) used by the API.
 
 ---
 
